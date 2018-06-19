@@ -1,18 +1,15 @@
 package water;
 
 import java.awt.Graphics;
-import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 
 public class Tela extends JPanel{
-    private Image icon;
-    protected int x;
-    protected int y;
-    
+    private Barco barco = new Barco();
+    private BanhistaVerde b1 = new BanhistaVerde(0, 470, 0, 320);
+    private BanhistaVerde b2 = new BanhistaVerde(500, 920, 350, 670);
     public Tela(){
         this.addKeyListener(new KeyListener(){
             @Override
@@ -21,7 +18,7 @@ public class Tela extends JPanel{
 
             @Override
             public void keyPressed(KeyEvent ke) {
-                atualizaPos(ke);
+                barco.atualizaPos(ke);
             }
 
             @Override
@@ -29,22 +26,14 @@ public class Tela extends JPanel{
             }
         
         });
-        icon = new ImageIcon("src/Imagens/barco.png").getImage();
-        x = 0;
-        y = 0;
         this.setFocusable(true);
-    }
-    
-    public void atualizaPos(KeyEvent e){
-        if (e.getKeyCode() == KeyEvent.VK_UP) y-=7;
-        if (e.getKeyCode() == KeyEvent.VK_DOWN) y+=7;
-        if (e.getKeyCode() == KeyEvent.VK_LEFT) x-=7;
-        if (e.getKeyCode() == KeyEvent.VK_RIGHT) x+=7;
     }
     
     @Override
     public void paint(Graphics g){
         super.paint(g);
-        g.drawImage(icon, x, y, this);
+        g.drawImage(b1.getIcon(), b1.getX(), b1.getY(), this);
+        g.drawImage(b2.getIcon(), b2.getX(), b2.getY(), this);
+        g.drawImage(barco.getIcon(), barco.getX(), barco.getY(), this);
     }
 }

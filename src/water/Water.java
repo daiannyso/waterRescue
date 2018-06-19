@@ -23,7 +23,8 @@ public class Water {
         Tela tela = new Tela();
         janela.add(tela);
         janela.setVisible(true);
-        janela.setSize(800,600);
+        janela.setSize(1000,700);
+        janela.setLocationRelativeTo(null);
         janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         tela.revalidate();
         tela.repaint();
