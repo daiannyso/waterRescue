@@ -1,11 +1,10 @@
-
 package water;
 
 import java.awt.Image;
-
+//classe abstrata com informações basicas sobre o banhista
 public abstract class Banhista {
-    private int x, y, peso;
-    private Image icon;
+    private int x, y, peso; //x, y -> posições / peso -> cor
+    private Image icon; //icon -> imagem
 
     public int getX() {
         return x;

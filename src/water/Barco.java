@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package water;
  
 import java.awt.Image;
@@ -31,11 +26,27 @@ public class Barco {
         y = 200;
     }
 
-    void atualizaPos(KeyEvent ke) {
-        if (ke.getKeyCode() == KeyEvent.VK_UP) y-=7;
-        if (ke.getKeyCode() == KeyEvent.VK_DOWN) y+=7;
-        if (ke.getKeyCode() == KeyEvent.VK_LEFT) x-=7;
-        if (ke.getKeyCode() == KeyEvent.VK_RIGHT) x+=7;
+    void atualizaPos(KeyEvent ke) { //recebe o botão pressionado e compara
+        if (ke.getKeyCode() == KeyEvent.VK_UP){
+            if(y > 0){ //não deixa o barco sair das margens da tela
+                y-=7;
+            }
+        }
+        if (ke.getKeyCode() == KeyEvent.VK_DOWN) {
+            if(y < 595){
+                y+=7;
+            }
+        }
+        if (ke.getKeyCode() == KeyEvent.VK_LEFT){
+            if(x > 0){
+                x-=7;
+            }
+        }
+        if (ke.getKeyCode() == KeyEvent.VK_RIGHT){
+            if(x < 885){
+                x+=7;
+            }
+        }
     }
     
 }

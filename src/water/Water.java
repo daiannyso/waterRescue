@@ -20,17 +20,14 @@ public class Water {
      */
     public static void main(String[] args) {
        JFrame janela = new JFrame("WaterRescue");
-        Tela tela = new Tela();
-        janela.add(tela);
-        janela.setVisible(true);
-        janela.setSize(1000,700);
-        janela.setLocationRelativeTo(null);
-        janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        tela.revalidate();
-        tela.repaint();
-        tela.requestFocus();
+        Tela tela = new Tela(); 
+        janela.add(tela); //adiciona a tela no container principal da janela
+        janela.setVisible(true); //torna ela visivel
+        janela.setSize(1000,700); //tamanho da tela
+        janela.setLocationRelativeTo(null); //posiciona no meio
+        janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //encerra quando fecha a janela
         while(true)
-            tela.repaint();
+            tela.repaint(); //reimprime os objetos na tela a cada iteração (para que o barco se mova)
     }
     
 }
