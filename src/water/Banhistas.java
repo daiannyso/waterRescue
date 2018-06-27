@@ -16,6 +16,10 @@ public class Banhistas {
     public int getTotal() {
         return total;
     }
+    
+    public void Salva(int i){
+        banhistas.get(i).setSalvo(1);
+    }
 
     public Banhistas(int vd, int am, int vm) {
         total = vd+am+vm;

@@ -43,7 +43,9 @@ public class Tela extends JPanel{
     public void imprimeBanhistas(Graphics g){ //Não pode ser método de Banhistas por conta do contexto da impressão
         int total = banhistas.getTotal();
         for(int i=0; i< total; i++){ //imprime o vetor de banhistas em mar
-            g.drawImage(banhistas.getBanhistas().get(i).getIcon(), banhistas.getBanhistas().get(i).getX(), banhistas.getBanhistas().get(i).getY(), this);
+            if(banhistas.getBanhistas().get(i).getSalvo() == 0){
+                g.drawImage(banhistas.getBanhistas().get(i).getIcon(), banhistas.getBanhistas().get(i).getX(), banhistas.getBanhistas().get(i).getY(), this);
+            }
         }
     }
     
@@ -56,6 +58,7 @@ public class Tela extends JPanel{
                 if(yb-58 <= barco.getY() && barco.getY() <= yb+58){
                     colidiu = true;
                     System.out.println("Colidiu!");
+                    banhistas.Salva(i);
                 }
             }
         }

@@ -13,5 +13,6 @@ public class BanhistaAmarelo extends Banhista{
         super.setX(x);
         super.setY(y);
         super.setPeso(2);
+        super.setSalvo(0);
     }
 }

@@ -13,5 +13,6 @@ public class BanhistaVerde extends Banhista {
         super.setX(x);
         super.setY(y);
         super.setPeso(1);
+        super.setSalvo(0);
     }
 }

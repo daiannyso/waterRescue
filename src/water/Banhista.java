@@ -5,6 +5,15 @@ import java.awt.Image;
 public abstract class Banhista {
     private int x, y, peso; //x, y -> posições / peso -> cor
     private Image icon; //icon -> imagem
+    private int salvo;
+
+    public int getSalvo() {
+        return salvo;
+    }
+
+    public void setSalvo(int salvo) {
+        this.salvo = salvo;
+    }
 
     public int getX() {
         return x;
