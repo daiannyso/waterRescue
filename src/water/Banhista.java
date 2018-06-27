@@ -4,7 +4,8 @@ import java.awt.Image;
 //classe abstrata com informações basicas sobre o banhista
 public abstract class Banhista {
     private int x, y, peso; //x, y -> posições / peso -> cor
-    private Image icon; //icon -> imagem
+    private Image icon;
+    private Image iconsalvo;//icon -> imagem
     private int salvo;
 
     public int getSalvo() {
@@ -46,5 +47,15 @@ public abstract class Banhista {
     public void setIcon(Image icon) {
         this.icon = icon;
     }
+
+    public Image getIconsalvo() {
+        return iconsalvo;
+    }
+
+    public void setIconsalvo(Image iconsalvo) {
+        this.iconsalvo = iconsalvo;
+    }
+    
+    
     
 }

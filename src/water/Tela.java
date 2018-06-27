@@ -37,6 +37,7 @@ public class Tela extends JPanel{
     public void paint(Graphics g){
         super.paint(g);
         imprimeBanhistas(g); //imprime os banhistas
+        imprimeSalvos(g);
         g.drawImage(barco.getIcon(), barco.getX(), barco.getY(), this); //imprime o barco
     }
     
@@ -45,6 +46,17 @@ public class Tela extends JPanel{
         for(int i=0; i< total; i++){ //imprime o vetor de banhistas em mar
             if(banhistas.getBanhistas().get(i).getSalvo() == 0){
                 g.drawImage(banhistas.getBanhistas().get(i).getIcon(), banhistas.getBanhistas().get(i).getX(), banhistas.getBanhistas().get(i).getY(), this);
+            }
+        }
+    }
+    
+    public void imprimeSalvos(Graphics g){
+        int total = banhistas.getTotal();
+        int totalsalvo = 0;
+        for(int i=0; i< total; i++){ //imprime o vetor de banhistas em mar
+            if(banhistas.getBanhistas().get(i).getSalvo() == 1){
+                g.drawImage(banhistas.getBanhistas().get(i).getIconsalvo(), 900, 10+(totalsalvo*50), this);
+                totalsalvo++;
             }
         }
     }

@@ -40,6 +40,7 @@ public class Banhistas {
         for(int i=0; i < total; i++){ // gera uma lista de valores aleatorios para x
             do{
                 xatual = ran.nextInt(850); //gera um valor
+                System.out.println("x");
             }while(avaliaColisao(x, i, xatual)); //testa se esse valor colide com algum outro
             x[i] = xatual;
         }
@@ -47,6 +48,7 @@ public class Banhistas {
         for(int i=0; i < total; i++){ //gera uma lista de valores aleatorios para y
             do{
                 yatual = ran.nextInt(600);
+                System.out.println("y");
             }while(avaliaColisao(y, i, yatual));
             y[i] = yatual;
         }
@@ -58,12 +60,11 @@ public class Banhistas {
     private boolean avaliaColisao(int[] vetor, int nv, int vatual) {
         for(int i = 0; i < nv; i++){
             int vi = vetor[i];
-            if (vi <= vatual && vatual <= vi+60){ //testa se a pos atual esta num intervalo de alguma das pos da lista
+            if (vi <= vatual && vatual <= vi+45){ //testa se a pos atual esta num intervalo de alguma das pos da lista
                 return true;
-            }else if (vatual <= vi && vi <= vatual+60){
+            }else if (vatual <= vi && vi <= vatual+45){
                 return true;
             }
-            return false;
         }
         return false;
     }

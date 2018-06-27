@@ -6,19 +6,17 @@
 package water;
 
 import java.awt.Image;
-import java.util.Random;
 import javax.swing.ImageIcon;
 
-/**
- *
- * @author rafae
- */
 public class BanhistaVermelho extends Banhista{
     private Image icon;
+    private Image salvo;
 
     public BanhistaVermelho(int x, int y){
         icon = new ImageIcon("src/Imagens/banhistavm.png").getImage();
+        salvo = new ImageIcon("src/Imagens/salvovm.png").getImage();
         super.setIcon(icon); //passa os valores para a classe Banhista
+        super.setIconsalvo(salvo);
         super.setX(x);
         super.setY(y);
         super.setPeso(3);
